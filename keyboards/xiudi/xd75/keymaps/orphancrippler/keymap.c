@@ -18,7 +18,16 @@
 
 enum layer_names {
     _QW,
-    _FN
+    _HI,
+    _LO,
+    _ADJ
+};
+
+enum custom_keycodes {
+    KC_QW,
+    KC_HI,
+    KC_LO,
+    KC_ADJ
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -36,31 +45,107 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * '--------------------------------------------------------------------------------------------------------------------------------------'
      */
     [_QW] = LAYOUT_ortho_5x15( /* QWERTY */
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_MINS, KC_GRV,  KC_EQL,  KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_LBRC, KC_BSLS, KC_RBRC, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_QUOT,
-        KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_HOME, KC_DEL,  KC_PGUP, KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_END,  KC_UP,   KC_PGDN, KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-        KC_LCTL, KC_LGUI, KC_LALT, MO(_FN), KC_SPC,  KC_SPC,  KC_LEFT, KC_DOWN, KC_RGHT, KC_SPC,  KC_SPC,  MO(_FN), KC_RALT, KC_RGUI, KC_RCTL
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_GRV,  KC_BSPC,
+        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS, KC_KP_7, KC_KP_8, KC_KP_9,
+        KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,     KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_KP_4, KC_KP_5, KC_KP_6,
+        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,     KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, KC_KP_1, KC_KP_2, KC_KP_3,
+        KC_LGUI, KC_APP,  KC_LALT, KC_LCTL, KC_LO,   KC_SPC,   KC_SPC,  KC_HI,   KC_RCTL, KC_RALT, KC_APP,  KC_RGUI, KC_KP_1, KC_PDOT, KC_ENT
     ),
 
-    /* FUNCTION
-     * .--------------------------------------------------------------------------------------------------------------------------------------.
-     * | F1     | F2     | F3     | F4     | F5     | F6     | NUM LK | P/     | P*     | F7     | F8     | F9     | F10    | F11    | F12    |
-     * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-     * | SELECT | CALC   | MYCOMP | MAIL   | RGB HD | RGB HI | P7     | P8     | P9     | -      |        |        | PR SCR | SCR LK | PAUSE  |
-     * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-     * | PREV   | PLAY   | NEXT   | STOP   | RGB SD | RGB SI | P4     | P5     | P6     | +      |        | QK_BOOT  |        |        |        |
-     * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-     * | VOL-   | MUTE   | VOL+   | APP    | RGB VD | RGB VI | P1     | P2     | P3     | PENT   |        |        |        |        |        |
-     * |--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------+--------|
-     * |        |        | RGB TG | FN     | RGB RMD| RGB MD | P0     |        | P.     | PENT   | PENT   | FN     |        |        |        |
-     * '--------------------------------------------------------------------------------------------------------------------------------------'
-     */
-    [_FN] = LAYOUT_ortho_5x15( /* FUNCTION */
-        KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_NLCK, KC_SLSH, KC_ASTR, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-        KC_MSEL, KC_CALC, KC_MYCM, KC_MAIL, RGB_HUD, RGB_HUI, KC_P7,   KC_P8,   KC_P9,   KC_MINS, _______, _______, KC_PSCR, KC_SLCK, KC_PAUS,
-        KC_MPRV, KC_MPLY, KC_MNXT, KC_MSTP, RGB_SAD, RGB_SAI, KC_P4,   KC_P5,   KC_P6,   KC_PLUS, _______, QK_BOOT,   _______, _______, _______,
-        KC_VOLD, KC_MUTE, KC_VOLU, KC_APP,  RGB_VAD, RGB_VAI, KC_P1,   KC_P2,   KC_P3,   KC_PENT, _______, _______, _______, _______, _______,
-        _______, _______, RGB_TOG, MO(_FN), RGB_RMOD,RGB_MOD, KC_P0,   _______, KC_PDOT, KC_PENT, KC_PENT, MO(_FN), _______, _______, _______
+    [_LO] = LAYOUT_ortho_5x15( /* Lower */
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_GRV,  KC_BSPC,
+        LSFT(KC_GRV), LSFT(KC_1), LSFT(KC_2), LSFT(KC_3), LSFT(KC_4), LSFT(KC_5), LSFT(KC_6), LSFT(KC_7),    LSFT(KC_8),    LSFT(KC_9),    LSFT(KC_0),   XXXXXXX, _______, _______, _______,
+        KC_F1,        KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      XXXXXXX,    LSFT(KC_MINS), LSFT(KC_EQL),  LSFT(KC_COMM), LSFT(KC_DOT), XXXXXXX, _______, _______, _______,
+        KC_F7,        KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,    LSFT(KC_3),    LSFT(KC_BSLS), KC_HOME,       KC_END,       XXXXXXX, _______, _______, _______,
+        _______,      _______,    _______,    _______,    _______,    _______,    _______,    _______,       _______,       _______,       _______,      _______, _______, _______, _______
+    ),
+
+    [_HI] = LAYOUT_ortho_5x15( /* Raise */
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,     KC_5,     KC_6,     KC_7,       KC_8,    KC_9,          KC_0,          KC_MINS, KC_EQL,  KC_GRV,  KC_DEL,
+        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,     KC_5,     KC_6,     KC_7,       KC_8,    KC_9,          KC_0,          KC_BSLS, _______, _______, _______,
+        KC_CAPS, KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT, XXXXXXX,  XXXXXXX,  KC_MINS,    KC_EQL,  KC_LBRC,       KC_RBRC,       XXXXXXX, _______, _______, _______,
+        XXXXXXX, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, XXXXXXX,  XXXXXXX, LSFT(KC_3), KC_BSLS, LSFT(KC_LBRC), LSFT(KC_RBRC), XXXXXXX, _______, _______, _______,
+        _______, _______, _______, _______, _______,  _______,   _______, _______,    _______, _______,       _______,       _______, _______, _______, _______
+    ),
+
+    [_ADJ] = LAYOUT_ortho_5x15( /* Adjust */
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, LALT(KC_F4), LCTL(LALT(KC_T)), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_CALC, KC_MYCM,     XXXXXXX,          XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        _______, _______, _______, _______, _______, _______,     _______,          _______, _______, _______, _______, _______, _______, _______, _______
     )
 };
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case KC_QW:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_QW);
+            }
+            return false;
+        case KC_LO:
+            if (record->event.pressed) {
+                layer_on(_LO);
+                update_tri_layer(_LO, _HI, _ADJ);
+            } else {
+                layer_off(_LO);
+                update_tri_layer(_LO, _HI, _ADJ);
+            }
+            return false;
+        case KC_HI:
+            if (record->event.pressed) {
+                layer_on(_HI);
+                update_tri_layer(_LO, _HI, _ADJ);
+            } else {
+                layer_off(_HI);
+                update_tri_layer(_LO, _HI, _ADJ);
+            }
+            return false;
+        case KC_ADJ:
+            if (record->event.pressed) {
+                layer_on(_ADJ);
+            } else {
+                layer_off(_ADJ);
+            }
+            return false;
+        case KC_COPY:
+            if (record->event.pressed) {
+                register_mods(mod_config(MOD_LCTL));
+                register_code(KC_C);
+            } else {
+                unregister_mods(mod_config(MOD_LCTL));
+                unregister_code(KC_C);
+            }
+            return false;
+        case KC_PASTE:
+            if (record->event.pressed) {
+                register_mods(mod_config(MOD_LCTL));
+                register_code(KC_V);
+            } else {
+                unregister_mods(mod_config(MOD_LCTL));
+                unregister_code(KC_V);
+            }
+            return false;
+        case KC_CUT:
+            if (record->event.pressed) {
+                register_mods(mod_config(MOD_LCTL));
+                register_code(KC_X);
+            } else {
+                unregister_mods(mod_config(MOD_LCTL));
+                unregister_code(KC_X);
+            }
+            return false;
+            break;
+        case KC_UNDO:
+            if (record->event.pressed) {
+                register_mods(mod_config(MOD_LCTL));
+                register_code(KC_Z);
+            } else {
+                unregister_mods(mod_config(MOD_LCTL));
+                unregister_code(KC_Z);
+            }
+            return false;
+    }
+    return true;
+}
