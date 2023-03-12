@@ -53,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_LO] = LAYOUT_ortho_5x15( /* Lower */
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,     KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS, KC_EQL,  KC_GRV,  KC_BSPC,
+        KC_ESC,        KC_1,      KC_2,       KC_3,       KC_4,       KC_5,       KC_6,       KC_7,          KC_8,          KC_9,          KC_0,         KC_MINS, KC_EQL,  KC_GRV,  KC_BSPC,
         LSFT(KC_GRV), LSFT(KC_1), LSFT(KC_2), LSFT(KC_3), LSFT(KC_4), LSFT(KC_5), LSFT(KC_6), LSFT(KC_7),    LSFT(KC_8),    LSFT(KC_9),    LSFT(KC_0),   XXXXXXX, _______, _______, _______,
         KC_F1,        KC_F2,      KC_F3,      KC_F4,      KC_F5,      KC_F6,      XXXXXXX,    LSFT(KC_MINS), LSFT(KC_EQL),  LSFT(KC_COMM), LSFT(KC_DOT), XXXXXXX, _______, _______, _______,
         KC_F7,        KC_F8,      KC_F9,      KC_F10,     KC_F11,     KC_F12,     XXXXXXX,    LSFT(KC_3),    LSFT(KC_BSLS), KC_HOME,       KC_END,       XXXXXXX, _______, _______, _______,
@@ -61,18 +61,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_HI] = LAYOUT_ortho_5x15( /* Raise */
-        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,     KC_5,     KC_6,     KC_7,       KC_8,    KC_9,          KC_0,          KC_MINS, KC_EQL,  KC_GRV,  KC_DEL,
-        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,     KC_5,     KC_6,     KC_7,       KC_8,    KC_9,          KC_0,          KC_BSLS, _______, _______, _______,
-        KC_CAPS, KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT, XXXXXXX,  XXXXXXX,  KC_MINS,    KC_EQL,  KC_LBRC,       KC_RBRC,       XXXXXXX, _______, _______, _______,
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,     KC_5,     KC_6,     KC_7,       KC_8,    KC_9,          KC_0,         KC_MINS, KC_EQL,  KC_GRV,  KC_DEL,
+        KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,     KC_5,     KC_6,     KC_7,       KC_8,    KC_9,          KC_0,         KC_BSLS, _______, _______, _______,
+        KC_CAPS, KC_LEFT, KC_UP,   KC_DOWN, KC_RIGHT, XXXXXXX,  XXXXXXX,  KC_MINS,    KC_EQL,  KC_LBRC,       KC_RBRC,      XXXXXXX, _______, _______, _______,
         XXXXXXX, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE, XXXXXXX,  XXXXXXX, LSFT(KC_3), KC_BSLS, LSFT(KC_LBRC), LSFT(KC_RBRC), XXXXXXX, _______, _______, _______,
-        _______, _______, _______, _______, _______,  _______,   _______, _______,    _______, _______,       _______,       _______, _______, _______, _______
+        _______, _______, _______, _______, _______,  _______,   _______, _______,    _______, _______,       _______,      _______, _______, _______, _______
     ),
 
     [_ADJ] = LAYOUT_ortho_5x15( /* Adjust */
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, LALT(KC_F4), LCTL(LALT(KC_T)), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_CALC, KC_MYCM,     XXXXXXX,          XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, QK_BOOT, XXXXXXX, XXXXXXX, LALT(KC_F4), LCTL(LALT(KC_T)), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_CALC,     KC_MYCM,          XXXXXXX, XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,          XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
         _______, _______, _______, _______, _______, _______,     _______,          _______, _______, _______, _______, _______, _______, _______, _______
     )
 };
