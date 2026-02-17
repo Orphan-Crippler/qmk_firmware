@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_F7,  KC_F8, KC_F9, KC_F10, KC_F11,  KC_F12,                      XXXXXXX,    LSFT(KC_3), LSFT(KC_BSLS),       KC_HOME,       KC_END, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, _______, _______
+                                          _______, _______, _______,    _______, _______, KC_LGUI
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -73,17 +73,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, KC_UNDO,  KC_CUT, KC_COPY, KC_PASTE, XXXXXXX,                    XXXXXXX, LSFT(KC_3), KC_BSLS, LSFT(KC_LBRC), LSFT(KC_RBRC), KC_LSFT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          _______, _______, _______,    _______, _______, _______
+                                          KC_LGUI, _______, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
   ),
 
   [_ADJUST] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
-        QK_BOOT, XXXXXXX, XXXXXXX, XXXXXXX, LALT(KC_F4), LCTL(LALT(KC_T)),                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, LALT(KC_F4), LCTL(LALT(KC_T)),                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX, XXXXXXX,  XXXXXXX, KC_CALC, KC_MYCM, KC_LGUI,                      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,  XXXXXXX, KC_CALC, KC_MYCM, XXXXXXX,                      XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      XXXXXXX,   XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+      XXXXXXX, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                                           _______, _______, _______,    _______, _______, _______
                                       //`--------------------------'  `--------------------------'
@@ -106,10 +106,10 @@ static void print_status_narrow(void) {
     led_t led_usb_state = host_keyboard_led_state();
     if (led_usb_state.caps_lock) {
         oled_write_P(PSTR("KUPOW"), false);
-    } else {    
+    } else {
         oled_write_P(PSTR("Kupo!"), false);
-    }  
- 
+    }
+
     oled_write_P(PSTR("\n\n"), false);
     // Print current layer
     oled_write_ln_P(PSTR("LAYER"), false);
@@ -130,7 +130,7 @@ static void print_status_narrow(void) {
             oled_write_ln_P(PSTR("Undef"), false);
     }
     oled_write_P(PSTR("\n\nKweh!"), false);
-    
+
 }
 
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
